@@ -8,13 +8,13 @@ export function Header() {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <div className="hidden bg-[color:var(--teal-deep)] text-primary-foreground md:block">
+      <div className="hidden bg-[color:var(--teal-deep)] text-white md:block">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2 text-xs">
-          <div className="flex items-center gap-2 opacity-90">
+          <div className="flex items-center gap-2 text-white opacity-90">
             <TrendingUp className="h-3.5 w-3.5" />
-            <span>Novo relatório: <strong>Rentabilidade por m² em SP — Q3 2026</strong></span>
+            <span className="text-white">Novo relatório: <strong className="text-white">Rentabilidade por m² em SP — Q3 2026</strong></span>
           </div>
-          <Link to="/newsletter" className="rounded-full bg-primary-foreground/10 px-3 py-1 font-medium transition-colors hover:bg-primary-foreground/20">
+          <Link to="/newsletter" className="rounded-full bg-white/10 px-3 py-1 font-medium text-white transition-colors hover:bg-white/20">
             Baixar grátis →
           </Link>
         </div>
