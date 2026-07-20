@@ -14,8 +14,8 @@ export const Route = createFileRoute("/")({
     meta: [
       { title: "spazi.info — Investir em imóveis comerciais com ROI acima de 12% a.a." },
       { name: "description", content: "Análises de ROI, salas médicas, holding patrimonial e cases reais para investidores em espaços comerciais no Brasil." },
-      { property: "og:title", content: "spazi.info — Espaços comerciais que rendem mais que renda fixa" },
-      { property: "og:description", content: "Investimento em imóveis comerciais: ROI, jurídico, due diligence e cases reais." },
+      { property: "og:title", content: "spazi.info — Investir em imóveis comerciais com ROI acima de 12% a.a." },
+      { property: "og:description", content: "Análises de ROI, salas médicas, holding patrimonial e cases reais para investidores em espaços comerciais no Brasil." },
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],

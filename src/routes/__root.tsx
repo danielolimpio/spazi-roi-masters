@@ -77,14 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "spazi.info — Investir em imóveis comerciais com ROI acima de 12% a.a." },
+      { name: "description", content: "Análises de ROI, salas médicas, holding patrimonial e cases reais para investidores em espaços comerciais no Brasil." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "spazi.info — Investir em imóveis comerciais com ROI acima de 12% a.a." },
+      { property: "og:description", content: "Análises de ROI, salas médicas, holding patrimonial e cases reais para investidores em espaços comerciais no Brasil." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "spazi.info — Investir em imóveis comerciais com ROI acima de 12% a.a." },
+      { name: "twitter:description", content: "Análises de ROI, salas médicas, holding patrimonial e cases reais para investidores em espaços comerciais no Brasil." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/bb02355b-1a4d-4039-974a-383e2304b7af/id-preview-1017efe6--b354ee84-a3e9-4223-993d-6d412908586a.lovable.app-1784509514439.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/bb02355b-1a4d-4039-974a-383e2304b7af/id-preview-1017efe6--b354ee84-a3e9-4223-993d-6d412908586a.lovable.app-1784509514439.png" },
     ],
     links: [
       {
