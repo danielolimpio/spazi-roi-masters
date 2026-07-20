@@ -12,7 +12,7 @@ export function BlogSidebar() {
   return (
     <aside className="space-y-6">
       <div className="rounded-2xl border border-border bg-card p-5">
-        <h4 className="mb-3 text-sm font-bold text-foreground">Search</h4>
+        <h4 className="mb-3 text-sm font-bold text-foreground">Buscar</h4>
         <form
           onSubmit={(e) => { e.preventDefault(); if (q) window.location.href = `/busca?q=${encodeURIComponent(q)}`; }}
           className="flex gap-2"
@@ -30,7 +30,7 @@ export function BlogSidebar() {
       </div>
 
       <div className="rounded-2xl border border-border bg-card p-5">
-        <h4 className="mb-3 text-sm font-bold text-foreground">Browse by Category</h4>
+        <h4 className="mb-3 text-sm font-bold text-foreground">Navegar por Categoria</h4>
         <ul className="space-y-2">
           {(Object.keys(CATEGORIES) as CategorySlug[]).map((k) => {
             const c = CATEGORIES[k];
@@ -57,7 +57,7 @@ export function BlogSidebar() {
       </div>
 
       <div className="rounded-2xl border border-border bg-card p-5">
-        <h4 className="mb-3 text-sm font-bold text-foreground">Our Authors</h4>
+        <h4 className="mb-3 text-sm font-bold text-foreground">Nossos Autores</h4>
         <ul className="space-y-3">
           {Object.values(AUTHORS).map((a) => (
             <li key={a.slug} className="flex items-center gap-3">
@@ -75,7 +75,7 @@ export function BlogSidebar() {
       </div>
 
       <div className="rounded-2xl border border-border bg-card p-5">
-        <h4 className="mb-3 text-sm font-bold text-foreground">Our Tags</h4>
+        <h4 className="mb-3 text-sm font-bold text-foreground">Nossas Tags</h4>
         <div className="flex flex-wrap gap-2">
           {TAGS.map((t) => (
             <span key={t} className="cursor-pointer rounded-full border border-border bg-background px-3 py-1 text-xs text-foreground/80 transition-colors hover:border-[color:var(--teal)] hover:text-[color:var(--teal)]">
@@ -86,7 +86,7 @@ export function BlogSidebar() {
       </div>
 
       <div className="rounded-2xl border border-border bg-card p-5">
-        <h4 className="mb-3 text-sm font-bold text-foreground">Follow Us</h4>
+        <h4 className="mb-3 text-sm font-bold text-foreground">Siga-nos</h4>
         <div className="flex gap-2">
           {[Facebook, Instagram, Twitter, Linkedin, Youtube].map((Icon, i) => (
             <a key={i} href="#" aria-label="rede social" className="grid h-9 w-9 place-items-center rounded-full bg-[color:var(--teal-soft)] text-[color:var(--teal)] transition-colors hover:bg-[color:var(--teal)] hover:text-primary-foreground">
@@ -97,7 +97,7 @@ export function BlogSidebar() {
       </div>
 
       <div className="rounded-2xl border border-border bg-card p-5">
-        <h4 className="mb-1 text-sm font-bold text-foreground">Sign Up</h4>
+        <h4 className="mb-1 text-sm font-bold text-foreground">Inscreva-se</h4>
         <p className="mb-3 text-xs text-muted-foreground">Receba as análises semanais de ROI direto no seu e-mail.</p>
         <form onSubmit={(e) => e.preventDefault()} className="space-y-3">
           <input
