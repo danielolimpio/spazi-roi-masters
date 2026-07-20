@@ -189,6 +189,3 @@ function FreshTile({ article, className = "", tall = false }: { article: ReturnT
 }
 
 function pickArticle() { return ARTICLES[0]; }
-    </div>
-  );
-}
