@@ -5,7 +5,7 @@ import { BlogSidebar } from "@/components/blog/sidebar";
 import { NewsletterBand } from "@/components/blog/newsletter";
 import { ArticleCard } from "@/components/blog/article-card";
 import { CategoryBadge } from "@/components/blog/category-badge";
-import { AUTHORS, CATEGORIES, getArticleBySlug, getRelatedArticles } from "@/data/blog";
+import { AUTHORS, CATEGORIES, getArticleBySlug, getRelatedArticles, type Article } from "@/data/blog";
 import { ChevronRight, Clock, Eye, Facebook, Linkedin, Twitter, Share2 } from "lucide-react";
 
 export const Route = createFileRoute("/artigo/$slug")({
@@ -47,7 +47,7 @@ export const Route = createFileRoute("/artigo/$slug")({
 });
 
 function ArticlePage() {
-  const { article } = Route.useLoaderData();
+  const { article } = Route.useLoaderData() as { article: Article };
   const author = AUTHORS[article.authorSlug];
   const cat = CATEGORIES[article.category];
   const related = getRelatedArticles(article);
@@ -122,7 +122,7 @@ function ArticlePage() {
             </div>
 
             <div className="mt-10 flex flex-wrap gap-2">
-              {article.tags.map((t) => (
+              {article.tags.map((t: string) => (
                 <span key={t} className="rounded-full border border-border bg-card px-3 py-1 text-xs text-foreground/80">#{t}</span>
               ))}
             </div>

@@ -33,9 +33,9 @@ export const Route = createFileRoute("/categoria/$slug")({
 });
 
 function CategoryPage() {
-  const { slug } = Route.useLoaderData();
-  const cat = CATEGORIES[slug];
-  const articles = getArticlesByCategory(slug);
+  const data = Route.useLoaderData() as { slug: CategorySlug };
+  const cat = CATEGORIES[data.slug];
+  const articles = getArticlesByCategory(data.slug);
 
   return (
     <div className="min-h-screen bg-background">
