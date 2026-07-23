@@ -38,6 +38,9 @@ export function Header() {
                 {CATEGORIES[k].short}
               </Link>
             ))}
+            <Link to="/glossary" className="hover:text-foreground [&.active]:text-[color:var(--teal)]">
+              Glossary
+            </Link>
           </nav>
 
           <div className="ml-auto flex items-center gap-2">
