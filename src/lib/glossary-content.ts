@@ -24,23 +24,19 @@ export type TermContent = {
 
 const CATEGORY_CONTEXT: Record<string, string> = {
   roi:
-    "commercial real estate investors evaluating rental yield, cap rate and cash-on-cash performance on non-residential properties",
+    "investidores de imóveis comerciais que avaliam yield, cap rate e retorno cash-on-cash em imóveis não residenciais",
   medical:
-    "landlords and investors operating medical office buildings, dental suites, aesthetic clinics and outpatient facilities",
+    "proprietários e investidores que operam edifícios médicos, suítes odontológicas, clínicas estéticas e centros ambulatoriais",
   legal:
-    "family offices and holding companies structuring commercial real estate ownership for tax efficiency and estate planning",
+    "family offices e holdings que estruturam a titularidade de imóveis comerciais para eficiência tributária e planejamento sucessório",
   diligence:
-    "buyers, brokers and analysts running acquisition due diligence on office, medical and retail commercial assets",
+    "compradores, corretores e analistas que conduzem due diligence de aquisição em ativos comerciais de escritório, saúde e varejo",
   cases:
-    "sponsors, LPs and operators structuring joint ventures, capital stacks and value-add strategies on commercial properties",
+    "sponsors, LPs e operadores que estruturam joint ventures, capital stacks e estratégias value-add em imóveis comerciais",
 };
 
 function pretty(term: GlossaryTerm) {
   return term.term;
-}
-
-function pluralish(t: string) {
-  return /s$/i.test(t) ? t : `${t}s`;
 }
 
 export function buildTermContent(term: GlossaryTerm): TermContent {
@@ -49,93 +45,93 @@ export function buildTermContent(term: GlossaryTerm): TermContent {
   const catName = GLOSSARY_CATEGORIES[term.category].name;
 
   const answer =
-    `${t} is ${lower(term.short)} In commercial real estate, it is a core concept ${audience} rely on when underwriting deals, negotiating leases, and modeling long-term returns on income-producing properties.`;
+    `${t} é ${lower(term.short)} Em imóveis comerciais, é um conceito central em que ${audience} se apoiam ao analisar operações, negociar contratos e modelar retornos de longo prazo em imóveis geradores de renda.`;
 
   const definition = [
-    `${t} refers to ${lower(term.short)} The concept sits at the intersection of finance, leasing and legal structure, and is one of the recurring vocabulary items in professional commercial real estate practice.`,
-    `Within the ${catName.toLowerCase()} discipline, ${t.toLowerCase()} is used to describe a specific mechanism, ratio or arrangement that materially changes how an investor perceives risk and reward. Understanding it precisely — rather than approximately — is what separates institutional-grade underwriting from retail-style speculation.`,
-    `Because commercial real estate contracts are long-dated and illiquid, a small misinterpretation of ${t.toLowerCase()} can translate into meaningful basis-point differences in yield, IRR, or reversion value over a full hold period.`,
+    `${t} refere-se a ${lower(term.short)} O conceito está no cruzamento entre finanças, locação e estrutura jurídica, e é um dos termos recorrentes na prática profissional de imóveis comerciais.`,
+    `Dentro da disciplina de ${catName.toLowerCase()}, ${t.toLowerCase()} descreve um mecanismo, índice ou arranjo específico que altera materialmente como o investidor percebe risco e retorno. Entendê-lo com precisão — e não de forma aproximada — é o que separa o underwriting institucional da especulação amadora.`,
+    `Como contratos de imóveis comerciais são longos e ilíquidos, uma pequena interpretação errada de ${t.toLowerCase()} pode se traduzir em diferenças relevantes de yield, TIR ou valor de reversão ao longo de todo o período de hold.`,
   ];
 
   const keyFacts = [
-    `Belongs to the ${catName} vocabulary set used across acquisition, underwriting and asset management workflows.`,
-    `Applies primarily to non-residential income-producing properties such as medical offices, corporate suites, retail units and specialty clinics.`,
-    `Directly connects to related concepts including ${term.related.slice(0, 3).map((r) => humanize(r)).join(", ")}.`,
-    `Frequently appears in offering memoranda, lease abstracts, appraisal reports and lender term sheets.`,
-    `Correctly interpreting ${t.toLowerCase()} can shift projected returns by 100–300 basis points on a typical five-year hold.`,
+    `Pertence ao vocabulário de ${catName} usado nos fluxos de aquisição, underwriting e gestão de ativos.`,
+    `Aplica-se principalmente a imóveis não residenciais geradores de renda, como consultórios médicos, salas corporativas, unidades de varejo e clínicas especializadas.`,
+    `Conecta-se diretamente a conceitos como ${term.related.slice(0, 3).map((r) => humanize(r)).join(", ")}.`,
+    `Aparece com frequência em memorandos de oferta, resumos contratuais, laudos de avaliação e term sheets de bancos.`,
+    `Interpretar ${t.toLowerCase()} corretamente pode alterar o retorno projetado em 100–300 pontos-base em um hold típico de cinco anos.`,
   ];
 
-  const quickSummary = `${t} — ${term.short} Investors use it inside ${catName.toLowerCase()} workflows to compare deals on a consistent, apples-to-apples basis.`;
+  const quickSummary = `${t} — ${term.short} Investidores usam este conceito nos fluxos de ${catName.toLowerCase()} para comparar operações de forma consistente.`;
 
   const example = buildExample(term);
 
   const whyMatters =
-    `In a commercial real estate portfolio targeting yields above 12% per year, every recurring metric, clause and legal structure compounds. ${t} directly affects how ${audience} price risk, size debt, and negotiate terms. Ignoring it — or applying a residential-market intuition to it — is one of the most common reasons otherwise attractive deals underperform their pro forma. Sophisticated investors treat ${t.toLowerCase()} as a checklist item that must be documented explicitly in every offering memorandum before capital is committed.`;
+    `Em um portfólio de imóveis comerciais que busca yields acima de 12% ao ano, toda métrica, cláusula e estrutura jurídica recorrente se acumula. ${t} afeta diretamente como ${audience} precificam risco, dimensionam dívida e negociam condições. Ignorar esse conceito — ou aplicar uma intuição de mercado residencial — é um dos motivos mais comuns pelos quais operações aparentemente atraentes ficam abaixo do pro forma. Investidores sofisticados tratam ${t.toLowerCase()} como um item de checklist que precisa estar documentado em todo memorando de oferta antes do aporte de capital.`;
 
   const howItWorks = [
-    `Identify the property, lease or transaction where ${t.toLowerCase()} is being applied and gather the underlying documentation.`,
-    `Isolate the relevant financial, legal or operational inputs — for example rent, expenses, tenant credit or lease clauses.`,
-    `Apply the definition consistently across every comparable in the underwriting set so that deals can be benchmarked on an apples-to-apples basis.`,
-    `Stress-test the assumption by flexing vacancy, rent growth or exit cap rate to see how sensitive the outcome is to ${t.toLowerCase()}.`,
-    `Document the interpretation in the investment memo so future asset managers, auditors and LPs share the same understanding.`,
+    `Identifique o imóvel, contrato ou operação em que ${t.toLowerCase()} está sendo aplicado e reúna a documentação de suporte.`,
+    `Isole as variáveis financeiras, jurídicas ou operacionais relevantes — por exemplo aluguel, despesas, crédito do locatário ou cláusulas contratuais.`,
+    `Aplique a definição de forma consistente em cada operação comparável do underwriting para comparar de maneira homogênea.`,
+    `Estresse a premissa flexionando vacância, reajuste de aluguel ou cap rate de saída para medir a sensibilidade do resultado a ${t.toLowerCase()}.`,
+    `Documente a interpretação no memorando de investimento para que futuros gestores, auditores e LPs compartilhem o mesmo entendimento.`,
   ];
 
   const advantages = [
-    `Standardizes conversations between investors, brokers, appraisers and lenders using the same vocabulary.`,
-    `Improves the accuracy of pro forma modeling by tying assumptions to a well-defined concept.`,
-    `Makes it easier to compare heterogeneous commercial properties across markets and asset classes.`,
-    `Supports institutional-grade reporting to LPs, auditors and regulators.`,
-    `Reduces the risk of hidden clauses or misunderstood terms surviving into signed contracts.`,
+    `Padroniza a conversa entre investidores, corretores, avaliadores e bancos com o mesmo vocabulário.`,
+    `Aumenta a precisão do pro forma ao ancorar premissas em um conceito bem definido.`,
+    `Facilita comparar imóveis comerciais heterogêneos em mercados e classes de ativos diferentes.`,
+    `Sustenta relatórios de padrão institucional para LPs, auditores e reguladores.`,
+    `Reduz o risco de cláusulas ocultas ou termos mal interpretados sobreviverem no contrato assinado.`,
   ];
 
   const disadvantages = [
-    `Definitions can drift subtly between jurisdictions, brokerages and lender templates.`,
-    `Over-relying on ${t.toLowerCase()} in isolation, without cross-checking against other metrics, can hide execution risk.`,
-    `Historical benchmarks may not reflect current interest-rate or vacancy dynamics.`,
-    `Requires disciplined documentation to avoid ambiguity between counterparties.`,
+    `As definições podem variar sutilmente entre jurisdições, corretoras e modelos de bancos.`,
+    `Confiar apenas em ${t.toLowerCase()}, sem cruzar com outras métricas, pode esconder risco de execução.`,
+    `Benchmarks históricos podem não refletir a dinâmica atual de juros ou vacância.`,
+    `Exige documentação disciplinada para evitar ambiguidade entre as partes.`,
   ];
 
   const mistakes = [
-    `Copying a broker's stated figure without verifying the underlying rent roll and expense schedule.`,
-    `Confusing ${t.toLowerCase()} with a superficially similar residential-market concept.`,
-    `Ignoring how ${t.toLowerCase()} interacts with related terms such as ${term.related.slice(0, 2).map((r) => humanize(r)).join(" and ")}.`,
-    `Failing to reconcile the pro forma assumption with signed lease documents and estoppel certificates.`,
-    `Applying a single benchmark across radically different submarkets or asset classes.`,
+    `Copiar o número apresentado pelo corretor sem validar o rent roll e a planilha de despesas.`,
+    `Confundir ${t.toLowerCase()} com um conceito de mercado residencial parecido apenas na superfície.`,
+    `Ignorar como ${t.toLowerCase()} interage com termos relacionados como ${term.related.slice(0, 2).map((r) => humanize(r)).join(" e ")}.`,
+    `Deixar de reconciliar a premissa do pro forma com contratos assinados e declarações de estoppel.`,
+    `Aplicar um único benchmark a submercados ou classes de ativos radicalmente diferentes.`,
   ];
 
   const faqs = [
     {
-      q: `What does ${t} mean in commercial real estate?`,
-      a: `${t} means ${lower(term.short)} It is a defined concept ${audience} apply when underwriting, structuring or reporting on non-residential income-producing property.`,
+      q: `O que significa ${t} em imóveis comerciais?`,
+      a: `${t} significa ${lower(term.short)} É um conceito bem definido que ${audience} aplicam ao analisar, estruturar ou reportar imóveis não residenciais geradores de renda.`,
     },
     {
-      q: `How is ${t} different from residential real estate practice?`,
-      a: `Commercial deals are underwritten on income and lease credit, not on comparable single-family homes. That means ${t.toLowerCase()} carries different implications for pricing, financing, and exit compared to the residential equivalent — if one exists at all.`,
+      q: `Como ${t} difere da prática do mercado residencial?`,
+      a: `Operações comerciais são analisadas pela renda e pelo crédito do contrato, não por casas comparáveis. Isso faz com que ${t.toLowerCase()} tenha implicações diferentes de preço, financiamento e saída em relação ao equivalente residencial — se é que existe.`,
     },
     {
-      q: `Where is ${t} typically documented?`,
-      a: `You will find ${t.toLowerCase()} referenced in offering memoranda, lease abstracts, appraisal reports, lender term sheets and investment committee memos. Institutional operators keep the specific interpretation consistent across every document.`,
+      q: `Onde ${t} costuma ser documentado?`,
+      a: `Você encontra ${t.toLowerCase()} em memorandos de oferta, resumos de contratos, laudos de avaliação, term sheets de bancos e memorandos de comitê. Operadores institucionais mantêm a mesma interpretação em todos os documentos.`,
     },
     {
-      q: `How does ${t} affect projected ROI?`,
-      a: `Even small changes to ${t.toLowerCase()} can move levered IRR and cash-on-cash by hundreds of basis points on a typical five-year hold, especially when combined with related assumptions like ${humanize(term.related[0] ?? "cap-rate")}.`,
+      q: `Como ${t} afeta o ROI projetado?`,
+      a: `Pequenas variações em ${t.toLowerCase()} podem mover a TIR alavancada e o cash-on-cash em centenas de pontos-base num hold típico de cinco anos, especialmente combinado a premissas correlatas como ${humanize(term.related[0] ?? "cap-rate")}.`,
     },
     {
-      q: `Which related terms should investors learn alongside ${t}?`,
-      a: `Start with ${term.related.map((r) => humanize(r)).join(", ")}. Mastering the cluster gives a much more accurate mental model than studying ${t.toLowerCase()} in isolation.`,
+      q: `Quais termos relacionados o investidor deve estudar junto com ${t}?`,
+      a: `Comece por ${term.related.map((r) => humanize(r)).join(", ")}. Dominar o conjunto oferece um modelo mental muito mais preciso do que estudar ${t.toLowerCase()} isoladamente.`,
     },
   ];
 
   const furtherReading = [
-    `Deep Dive: how ${t.toLowerCase()} shapes underwriting in ${catName.toLowerCase()}`,
-    `Playbook: reading ${t.toLowerCase()} on an institutional offering memorandum`,
-    `Checklist: verifying ${t.toLowerCase()} during acquisition due diligence`,
+    `Aprofundamento: como ${t.toLowerCase()} molda o underwriting em ${catName.toLowerCase()}`,
+    `Playbook: como ler ${t.toLowerCase()} em um memorando de oferta institucional`,
+    `Checklist: como validar ${t.toLowerCase()} durante a due diligence de aquisição`,
   ];
 
   const references = [
-    `Institutional Real Estate Handbook — chapter on ${catName.toLowerCase()}.`,
-    `Appraisal Institute publications on commercial valuation.`,
-    `Internal spazi.info research on commercial yields above 12% per year.`,
+    `Manual de Real Estate Institucional — capítulo sobre ${catName.toLowerCase()}.`,
+    `Publicações do Appraisal Institute sobre avaliação de imóveis comerciais.`,
+    `Pesquisa interna spazi.info sobre yields comerciais acima de 12% ao ano.`,
   ];
 
   const readingMinutes = 6;
@@ -160,7 +156,7 @@ export function buildTermContent(term: GlossaryTerm): TermContent {
 
 function buildExample(term: GlossaryTerm) {
   const t = term.term;
-  return `Consider a stabilized 1,200 m² medical office building acquired for USD 5.4M with a stabilized net operating income of USD 486,000. When an investor evaluates the deal, ${t.toLowerCase()} plays a specific role in how the projection is built: it either changes the numerator, the denominator, the risk profile, or the legal wrapper around the cash flow. Institutional buyers document exactly how ${t.toLowerCase()} was interpreted so that the LP report, the lender's credit memo and the appraisal all reconcile line by line.`;
+  return `Considere um edifício médico estabilizado de 1.200 m² adquirido por R$ 27 milhões, com receita operacional líquida estabilizada de R$ 2,43 milhões ao ano. Quando o investidor avalia essa operação, ${t.toLowerCase()} tem um papel específico na construção da projeção: altera o numerador, o denominador, o perfil de risco ou o envelope jurídico do fluxo de caixa. Compradores institucionais documentam exatamente como ${t.toLowerCase()} foi interpretado para que o relatório ao LP, o memorando de crédito do banco e o laudo de avaliação conciliem linha a linha.`;
 }
 
 function humanize(slug: string) {

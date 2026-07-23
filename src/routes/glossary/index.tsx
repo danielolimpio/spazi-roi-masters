@@ -15,17 +15,17 @@ import {
 export const Route = createFileRoute("/glossary/")({
   head: () => ({
     meta: [
-      { title: "Commercial Real Estate Glossary — 100+ Investor Terms | spazi.info" },
+      { title: "Glossário de Imóveis Comerciais — 100+ Termos para Investidores | spazi.info" },
       {
         name: "description",
         content:
-          "Definitive glossary of 100+ commercial real estate investment terms — ROI, cap rate, NNN, holding structures, medical office building, due diligence and more.",
+          "Glossário definitivo com mais de 100 termos de investimento em imóveis comerciais — ROI, cap rate, NNN, holdings, edifícios médicos, due diligence e muito mais.",
       },
-      { property: "og:title", content: "Commercial Real Estate Glossary — spazi.info" },
+      { property: "og:title", content: "Glossário de Imóveis Comerciais — spazi.info" },
       {
         property: "og:description",
         content:
-          "Investor-grade definitions for 100+ commercial real estate concepts across ROI, medical CRE, legal structures, due diligence and deal structuring.",
+          "Definições de nível institucional para mais de 100 conceitos de imóveis comerciais em ROI, imóveis médicos, estruturas jurídicas, due diligence e estruturação.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://spazi-roi-insight.lovable.app/glossary" },
@@ -37,9 +37,9 @@ export const Route = createFileRoute("/glossary/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "DefinedTermSet",
-          name: "spazi.info Commercial Real Estate Glossary",
+          name: "Glossário de Imóveis Comerciais spazi.info",
           description:
-            "A curated glossary of 100+ commercial real estate investment terms for investors targeting yields above 12% per year.",
+            "Glossário curado com mais de 100 termos de investimento em imóveis comerciais para investidores que buscam yields acima de 12% ao ano.",
           url: "https://spazi-roi-insight.lovable.app/glossary",
           hasDefinedTerm: GLOSSARY_TERMS.slice(0, 25).map((t) => ({
             "@type": "DefinedTerm",
@@ -55,7 +55,7 @@ export const Route = createFileRoute("/glossary/")({
           "@type": "BreadcrumbList",
           itemListElement: [
             { "@type": "ListItem", position: 1, name: "Home", item: "https://spazi-roi-insight.lovable.app/" },
-            { "@type": "ListItem", position: 2, name: "Glossary", item: "https://spazi-roi-insight.lovable.app/glossary" },
+            { "@type": "ListItem", position: 2, name: "Glossário", item: "https://spazi-roi-insight.lovable.app/glossary" },
           ],
         }),
       },
@@ -100,23 +100,23 @@ function GlossaryHub() {
           <nav className="mb-6 flex items-center gap-1 text-xs text-muted-foreground">
             <Link to="/" className="hover:text-foreground">Home</Link>
             <ChevronRight className="h-3 w-3" />
-            <span className="font-medium text-foreground">Glossary</span>
+            <span className="font-medium text-foreground">Glossário</span>
           </nav>
           <div className="flex items-center gap-3">
             <div className="grid h-10 w-10 place-items-center rounded-xl bg-[color:var(--teal)] text-primary-foreground">
               <BookOpen className="h-5 w-5" />
             </div>
             <span className="text-sm font-semibold uppercase tracking-widest text-[color:var(--teal-deep)]">
-              Glossary Hub
+              Glossário
             </span>
           </div>
           <h1 className="mt-4 font-display text-4xl font-bold leading-tight text-foreground sm:text-5xl">
-            The commercial real estate glossary for serious investors
+            O glossário de imóveis comerciais para investidores sérios
           </h1>
           <p className="mt-4 max-w-3xl text-lg text-muted-foreground">
-            100+ definitions covering ROI metrics, medical office buildings, holding structures,
-            due diligence and deal structuring — written for investors targeting yields above 12% per year
-            on non-residential income properties.
+            Mais de 100 definições cobrindo métricas de ROI, edifícios médicos, holdings,
+            due diligence e estruturação de operações — feitas para investidores que buscam yields
+            acima de 12% ao ano em imóveis não residenciais.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -125,7 +125,7 @@ function GlossaryHub() {
               <input
                 value={q}
                 onChange={(e) => setQ(e.target.value)}
-                placeholder="Search terms — e.g. cap rate, NNN, 1031 exchange…"
+                placeholder="Buscar termos — ex.: cap rate, NNN, holding…"
                 className="w-full rounded-full border border-border bg-background py-3 pl-11 pr-5 text-sm outline-none focus:border-[color:var(--teal)]"
               />
             </div>
@@ -134,7 +134,7 @@ function GlossaryHub() {
               onChange={(e) => setCat(e.target.value as GlossaryCategory | "all")}
               className="rounded-full border border-border bg-background px-5 py-3 text-sm outline-none focus:border-[color:var(--teal)]"
             >
-              <option value="all">All categories</option>
+              <option value="all">Todas as categorias</option>
               {(Object.keys(GLOSSARY_CATEGORIES) as GlossaryCategory[]).map((k) => (
                 <option key={k} value={k}>{GLOSSARY_CATEGORIES[k].name}</option>
               ))}
@@ -183,7 +183,7 @@ function GlossaryHub() {
                 <div className="flex items-center gap-2">
                   <span className="h-2 w-2 rounded-full" style={{ backgroundColor: c.color }} />
                   <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                    {count} terms
+                    {count} termos
                   </span>
                 </div>
                 <div className="mt-2 font-display text-lg font-bold text-foreground">{c.name}</div>
@@ -195,7 +195,7 @@ function GlossaryHub() {
 
         {activeLetters.length === 0 && (
           <div className="rounded-2xl border border-border bg-card p-10 text-center text-muted-foreground">
-            No terms match your search. Try a different keyword or clear the filter.
+            Nenhum termo corresponde à sua busca. Tente outra palavra-chave ou limpe o filtro.
           </div>
         )}
 
@@ -204,7 +204,7 @@ function GlossaryHub() {
             <section key={letter} id={`letter-${letter}`} className="scroll-mt-24">
               <div className="mb-4 flex items-baseline gap-4 border-b border-border pb-3">
                 <h2 className="font-display text-4xl font-bold text-[color:var(--teal-deep)]">{letter}</h2>
-                <span className="text-sm text-muted-foreground">{grouped[letter].length} terms</span>
+                <span className="text-sm text-muted-foreground">{grouped[letter].length} termos</span>
               </div>
               <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 {grouped[letter].map((t) => {
