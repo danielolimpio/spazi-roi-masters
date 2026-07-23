@@ -51,7 +51,7 @@ export function Footer() {
           <h5 className="mb-4 text-sm font-bold uppercase tracking-wider text-foreground">Sitemap</h5>
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li><Link to="/">Home</Link></li>
-            <li><Link to="/glossary">Glossary</Link></li>
+            <li><Link to="/glossary">Glossário</Link></li>
             <li><a href="#">Sobre</a></li>
             <li><a href="#">Autores</a></li>
             <li><a href="#">Newsletter</a></li>

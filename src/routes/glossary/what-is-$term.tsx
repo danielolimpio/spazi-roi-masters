@@ -21,7 +21,7 @@ export const Route = createFileRoute("/glossary/what-is-$term")({
     if (!loaderData) {
       return {
         meta: [
-          { title: "Term not found — spazi.info Glossary" },
+          { title: "Termo não encontrado — Glossário spazi.info" },
           { name: "robots", content: "noindex" },
         ],
       };
@@ -29,19 +29,19 @@ export const Route = createFileRoute("/glossary/what-is-$term")({
     const { term } = loaderData;
     const content = buildTermContent(term);
     const url = `https://spazi-roi-insight.lovable.app/glossary/what-is-${params.term}`;
-    const title = `What is ${term.term}? — Definition, Example & ROI Impact | spazi.info`;
-    const description = `${term.term}: ${term.short} Investor-grade definition, worked example, pros, cons and FAQs for commercial real estate.`;
+    const title = `O que é ${term.term}? — Definição, Exemplo e Impacto no ROI | spazi.info`;
+    const description = `${term.term}: ${term.short} Definição de nível institucional, exemplo prático, prós, contras e perguntas frequentes para imóveis comerciais.`;
 
     return {
       meta: [
         { title },
         { name: "description", content: description },
-        { property: "og:title", content: `What is ${term.term}?` },
+        { property: "og:title", content: `O que é ${term.term}?` },
         { property: "og:description", content: description },
         { property: "og:type", content: "article" },
         { property: "og:url", content: url },
         { name: "twitter:card", content: "summary_large_image" },
-        { name: "twitter:title", content: `What is ${term.term}?` },
+        { name: "twitter:title", content: `O que é ${term.term}?` },
         { name: "twitter:description", content: description },
       ],
       links: [{ rel: "canonical", href: url }],
@@ -77,7 +77,7 @@ export const Route = createFileRoute("/glossary/what-is-$term")({
             "@type": "BreadcrumbList",
             itemListElement: [
               { "@type": "ListItem", position: 1, name: "Home", item: "https://spazi-roi-insight.lovable.app/" },
-              { "@type": "ListItem", position: 2, name: "Glossary", item: "https://spazi-roi-insight.lovable.app/glossary" },
+              { "@type": "ListItem", position: 2, name: "Glossário", item: "https://spazi-roi-insight.lovable.app/glossary" },
               { "@type": "ListItem", position: 3, name: term.term, item: url },
             ],
           }),
@@ -89,10 +89,10 @@ export const Route = createFileRoute("/glossary/what-is-$term")({
   notFoundComponent: () => (
     <div className="grid min-h-screen place-items-center bg-background text-foreground">
       <div className="text-center">
-        <h1 className="font-display text-3xl font-bold">Term not found</h1>
-        <p className="mt-2 text-muted-foreground">This glossary entry doesn't exist.</p>
+        <h1 className="font-display text-3xl font-bold">Termo não encontrado</h1>
+        <p className="mt-2 text-muted-foreground">Este verbete do glossário não existe.</p>
         <Link to="/glossary" className="mt-4 inline-flex items-center gap-1 text-[color:var(--teal)] underline">
-          Back to Glossary <ArrowRight className="h-4 w-4" />
+          Voltar ao Glossário <ArrowRight className="h-4 w-4" />
         </Link>
       </div>
     </div>
@@ -116,7 +116,7 @@ function TermPage() {
         <nav className="mb-6 flex items-center gap-1 text-xs text-muted-foreground" aria-label="Breadcrumb">
           <Link to="/" className="hover:text-foreground">Home</Link>
           <ChevronRight className="h-3 w-3" />
-          <Link to="/glossary" className="hover:text-foreground">Glossary</Link>
+          <Link to="/glossary" className="hover:text-foreground">Glossário</Link>
           <ChevronRight className="h-3 w-3" />
           <span className="line-clamp-1 font-medium text-foreground">{term.term}</span>
         </nav>
@@ -131,26 +131,26 @@ function TermPage() {
                 </span>
               </div>
               <h1 className="mt-3 font-display text-4xl font-bold leading-tight text-foreground sm:text-5xl">
-                What is {term.term}?
+                O que é {term.term}?
               </h1>
               <p className="mt-4 text-lg text-muted-foreground">{content.answer}</p>
 
               <div className="mt-6 flex flex-wrap items-center gap-4 border-y border-border py-4 text-xs text-muted-foreground">
-                <span className="inline-flex items-center gap-1"><BookOpen className="h-3.5 w-3.5" /> Glossary entry</span>
-                <span className="inline-flex items-center gap-1"><Clock className="h-3.5 w-3.5" /> {content.readingMinutes} min read</span>
-                <span>Updated {term.updated}</span>
+                <span className="inline-flex items-center gap-1"><BookOpen className="h-3.5 w-3.5" /> Verbete do glossário</span>
+                <span className="inline-flex items-center gap-1"><Clock className="h-3.5 w-3.5" /> {content.readingMinutes} min de leitura</span>
+                <span>Atualizado em {term.updated}</span>
               </div>
             </header>
 
             <aside className="mt-8 rounded-2xl border border-[color:var(--teal)] bg-[color:var(--teal-soft)] p-6">
               <div className="text-xs font-bold uppercase tracking-widest text-[color:var(--teal-deep)]">
-                Quick answer
+                Resposta rápida
               </div>
               <p className="mt-2 text-base text-foreground">{content.quickSummary}</p>
             </aside>
 
             <section className="mt-10">
-              <h2 className="font-display text-2xl font-bold text-foreground">Definition</h2>
+              <h2 className="font-display text-2xl font-bold text-foreground">Definição</h2>
               <div className="mt-4 space-y-4 text-foreground/85">
                 {content.definition.map((p, i) => (
                   <p key={i} className="leading-relaxed">{p}</p>
@@ -159,7 +159,7 @@ function TermPage() {
             </section>
 
             <section className="mt-10">
-              <h2 className="font-display text-2xl font-bold text-foreground">Key facts</h2>
+              <h2 className="font-display text-2xl font-bold text-foreground">Fatos-chave</h2>
               <ul className="mt-4 space-y-2">
                 {content.keyFacts.map((f, i) => (
                   <li key={i} className="flex gap-3 text-foreground/85">
@@ -171,19 +171,19 @@ function TermPage() {
             </section>
 
             <section className="mt-10">
-              <h2 className="font-display text-2xl font-bold text-foreground">Worked example</h2>
+              <h2 className="font-display text-2xl font-bold text-foreground">Exemplo prático</h2>
               <div className="mt-4 rounded-2xl border border-border bg-card p-6 text-foreground/85">
                 {content.example}
               </div>
             </section>
 
             <section className="mt-10">
-              <h2 className="font-display text-2xl font-bold text-foreground">Why {term.term.toLowerCase()} matters</h2>
+              <h2 className="font-display text-2xl font-bold text-foreground">Por que {term.term.toLowerCase()} importa</h2>
               <p className="mt-4 leading-relaxed text-foreground/85">{content.whyMatters}</p>
             </section>
 
             <section className="mt-10">
-              <h2 className="font-display text-2xl font-bold text-foreground">How it works in practice</h2>
+              <h2 className="font-display text-2xl font-bold text-foreground">Como funciona na prática</h2>
               <ol className="mt-4 space-y-3">
                 {content.howItWorks.map((step, i) => (
                   <li key={i} className="flex gap-3 text-foreground/85">
@@ -199,7 +199,7 @@ function TermPage() {
             <section className="mt-10 grid gap-6 md:grid-cols-2">
               <div className="rounded-2xl border border-border bg-card p-6">
                 <h3 className="flex items-center gap-2 font-display text-lg font-bold text-foreground">
-                  <CheckCircle2 className="h-5 w-5 text-[color:var(--teal)]" /> Advantages
+                  <CheckCircle2 className="h-5 w-5 text-[color:var(--teal)]" /> Vantagens
                 </h3>
                 <ul className="mt-3 space-y-2 text-sm text-foreground/85">
                   {content.advantages.map((a, i) => (
@@ -221,7 +221,7 @@ function TermPage() {
 
             <section className="mt-10">
               <h2 className="flex items-center gap-2 font-display text-2xl font-bold text-foreground">
-                <AlertTriangle className="h-6 w-6 text-[color:var(--teal-deep)]" /> Common mistakes
+                <AlertTriangle className="h-6 w-6 text-[color:var(--teal-deep)]" /> Erros comuns
               </h2>
               <ul className="mt-4 space-y-2">
                 {content.mistakes.map((m, i) => (
@@ -233,7 +233,7 @@ function TermPage() {
             </section>
 
             <section className="mt-10">
-              <h2 className="font-display text-2xl font-bold text-foreground">Frequently asked questions</h2>
+              <h2 className="font-display text-2xl font-bold text-foreground">Perguntas frequentes</h2>
               <div className="mt-4 divide-y divide-border rounded-2xl border border-border bg-card">
                 {content.faqs.map((f, i) => (
                   <details key={i} className="group px-5 py-4">
@@ -249,7 +249,7 @@ function TermPage() {
 
             {related.length > 0 && (
               <section className="mt-12">
-                <h2 className="font-display text-2xl font-bold text-foreground">Related terms</h2>
+                <h2 className="font-display text-2xl font-bold text-foreground">Termos relacionados</h2>
                 <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                   {related.map((r) => {
                     const rc = GLOSSARY_CATEGORIES[r.category];
@@ -279,20 +279,20 @@ function TermPage() {
           <aside className="space-y-6">
             <div className="sticky top-24 space-y-6">
               <div className="rounded-2xl border border-border bg-card p-5">
-                <h4 className="mb-3 text-sm font-bold uppercase tracking-wider text-foreground">On this page</h4>
+                <h4 className="mb-3 text-sm font-bold uppercase tracking-wider text-foreground">Nesta página</h4>
                 <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li><a href="#" className="hover:text-[color:var(--teal)]">Definition</a></li>
-                  <li><a href="#" className="hover:text-[color:var(--teal)]">Key facts</a></li>
-                  <li><a href="#" className="hover:text-[color:var(--teal)]">Worked example</a></li>
-                  <li><a href="#" className="hover:text-[color:var(--teal)]">How it works</a></li>
-                  <li><a href="#" className="hover:text-[color:var(--teal)]">Advantages & trade-offs</a></li>
-                  <li><a href="#" className="hover:text-[color:var(--teal)]">Common mistakes</a></li>
-                  <li><a href="#" className="hover:text-[color:var(--teal)]">FAQs</a></li>
+                  <li><a href="#" className="hover:text-[color:var(--teal)]">Definição</a></li>
+                  <li><a href="#" className="hover:text-[color:var(--teal)]">Fatos-chave</a></li>
+                  <li><a href="#" className="hover:text-[color:var(--teal)]">Exemplo prático</a></li>
+                  <li><a href="#" className="hover:text-[color:var(--teal)]">Como funciona</a></li>
+                  <li><a href="#" className="hover:text-[color:var(--teal)]">Vantagens e trade-offs</a></li>
+                  <li><a href="#" className="hover:text-[color:var(--teal)]">Erros comuns</a></li>
+                  <li><a href="#" className="hover:text-[color:var(--teal)]">Perguntas frequentes</a></li>
                 </ul>
               </div>
 
               <div className="rounded-2xl border border-border bg-card p-5">
-                <h4 className="mb-3 text-sm font-bold uppercase tracking-wider text-foreground">More in {cat.name}</h4>
+                <h4 className="mb-3 text-sm font-bold uppercase tracking-wider text-foreground">Mais em {cat.name}</h4>
                 <ul className="space-y-2 text-sm">
                   {catSiblings.map((s) => (
                     <li key={s.slug}>
@@ -310,7 +310,7 @@ function TermPage() {
                   to="/glossary"
                   className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-[color:var(--teal)]"
                 >
-                  Browse all terms <ArrowRight className="h-3.5 w-3.5" />
+                  Ver todos os termos <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
               </div>
             </div>

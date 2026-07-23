@@ -39,7 +39,7 @@ export function Header() {
               </Link>
             ))}
             <Link to="/glossary" className="hover:text-foreground [&.active]:text-[color:var(--teal)]">
-              Glossary
+              Glossário
             </Link>
           </nav>
 
